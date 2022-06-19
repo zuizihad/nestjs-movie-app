@@ -8,7 +8,9 @@ import {
     Param,
     Patch,
     Delete,
+    UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 
 import { MoviesService } from './movies.service';
 
@@ -16,6 +18,7 @@ import { MoviesService } from './movies.service';
 export class MoviesController {
     constructor(private readonly moviesService: MoviesService) { }
 
+    @UseGuards(AuthGuard('jwt'))
     @Post()
     async addMovie(
         @Body('title') title: string,
