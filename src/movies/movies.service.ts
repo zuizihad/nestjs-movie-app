@@ -7,7 +7,6 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class MoviesService {
-    private movies: Movie[] = [];
     constructor(@InjectModel('Movie') private readonly movieModel: Model<Movie>) { }
     async insertMovie(
         title: string,

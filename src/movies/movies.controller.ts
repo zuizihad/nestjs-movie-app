@@ -58,6 +58,7 @@ export class MoviesController {
         return this.moviesService.getSingleMovie(movieId);
     }
 
+    @UseGuards(AuthGuard('jwt'))
     @Patch(':id')
     async updateMovie(
         @Param('id') movieId: string,
@@ -88,6 +89,7 @@ export class MoviesController {
         return null;
     }
 
+    @UseGuards(AuthGuard('jwt'))
     @Delete(':id')
     async removeMovie(@Param('id') movieId: string) {
         await this.moviesService.deleteMovie(movieId);

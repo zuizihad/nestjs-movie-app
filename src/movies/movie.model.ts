@@ -2,11 +2,11 @@
 import * as mongoose from 'mongoose'
 
 export const MovieSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    released: { type: String, required: true },
-    director: { type: String, required: true },
-    imdbVotes: { type: String, required: true },
-    moviePlot: { type: String, required: true },
+    title: { type: String, trim: true, required: true },
+    released: { type: String, trim: true, required: true },
+    director: { type: String, trim: true, required: true },
+    imdbVotes: { type: String, trim: true, required: true },
+    moviePlot: { type: String, trim: true, required: true },
     personName: { type: Array, required: true },
     genre: { type: String, required: true },
     country: { type: String, required: true },
